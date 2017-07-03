@@ -1,0 +1,176 @@
+*{
+    padding:0;
+    margin: 0;
+}
+body{
+    background-color:#cce4e6;
+}
+header{
+    height: 40px;
+    width: 100%;
+    background-color:#00535d;
+    text-align: center;
+    padding: 20px 0px;
+    color: antiquewhite;
+}
+.home{
+    font-size: 38px !important;
+}
+i{
+    font-size: 30px !important;
+    padding: 0px 20px;
+}
+.logo{
+    margin-right: 40px;
+}
+.left{
+    float: left;
+}
+.logout{
+    float: right;
+    font-size: 20px;
+    text-align: center;
+color: #00535d;
+    padding: 6px 0px;
+}
+.fa-sign-out{
+    font-size: 20px !important;
+}
+.left{
+    float: left;
+}
+.account{
+
+    padding-top:20px ;
+    height: 400px;
+    width: 300px;
+    text-align: center;
+    background-color: white;
+
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+#container{
+    margin:80px 40px 0px 40px;
+    overflow: hidden;
+
+}
+.info{
+    width: 200px;
+    text-align: left;
+    margin: auto;
+
+}
+.penc{
+font-size: 24px !important;
+    font-family: "DejaVu Sans";
+    color: #00535d;
+}
+.edit{
+    display: block;
+    margin: 10px auto;
+    width:120px;
+    padding: 4px;
+    border: 1px solid #00535d;
+    font-size: 20px;
+    font-family: "DejaVu Sans";
+    color: #00535d;
+}
+
+#modal{
+
+margin-top: 80px;
+    text-align: center;
+    opacity: 0.7;
+    width: 100%;
+    height: calc(100%);
+}
+.cont{
+width: 800px;
+    margin: auto;
+    padding: 20px 0px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+.edt{
+    margin-top: 20px;
+    font-size: 20px;
+    padding:10px 30px;
+}
+.cont input{
+    width: 400px;
+    margin: 10px;
+    height: 40px;
+}
+.cont select{
+    width: 400px;
+    height: 40px;
+}
+.post{
+    height: 40px;
+    width: 400px;
+}
+.post_all{
+    width: 440px;
+    float: left;
+    margin-left: 80px;
+}
+.post_div{
+
+    padding: 20px 40px;
+width: 400px;
+    background-color: white;
+    border-radius: 4px;
+    height: 100px;
+
+}
+.post_btn{
+    height: 40px;
+  width: 80px;
+    background-color: #00535d;
+color: white;
+    font-size: 20px;
+}
+.post_list{
+    margin-top: 80px;
+    width: 400px;
+    padding: 20px 40px;
+background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.avatar{
+    float: left;
+}
+.nm{
+    float: left;
+
+}
+.photo{
+    height: 100px;
+    width: 300px;
+text-align: center;
+    margin-top: 40px;
+    background-color: #00535d;
+    border-radius: 4px;
+
+}
+.photo a{
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+
+}
+.fa-camera-retro{
+    color: white;
+}
+.post_text{
+    font-size: 20px;
+    font-family: "DejaVu Sans";
+    border-top: 1px solid gray;
+    display: block;
+    margin-top: 100px;
+    text-align: justify;
+    padding: 10px;
+
+}

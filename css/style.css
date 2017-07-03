@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    height: 40px;
+    width: 100%;
+    background-color:#00535d;
+    text-align: center;
+    padding: 20px 0px;
+    color: antiquewhite;
+}
+.log_div{
+    width: 1000px;
+    margin: auto;
+}
+h1{
+    width: 300px;
+    float: left;
+}
+#login_hidden{
+    display: none;
+text-align: center;
+    height: 200px;
+    width: 300px;
+    float: right;
+    margin-right: 60px;
+    background-color: white;
+    opacity: 0.7;
+    border-radius:6px;
+}
+header button{
+    height: 40px;
+    width: 120px;
+    float: right;
+    font-size: 20px;
+    font-family: "Abyssinica SIL";
+    color: #00535d;
+
+}
+.login{
+    background:linear-gradient(to top, #00535d, #e2fcff);
+    height: 40px;
+    margin-top: 10px;
+    width: 120px;
+    border-radius: 4px;
+    color: white;
+    font-size: 24px;
+}
+body{
+    background-image: url("../images/2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center{
+    width: 1000px;
+    height: 280px;
+    margin: auto;
+
+   margin-top:250px;
+    background-color:#00535d;
+    opacity:0.7;
+    border-radius: 4px;
+}
+.join{
+    font-size: 40px;
+    color: #ffffff;
+
+}
+input,select {
+width: 200px;
+    margin-top: 10px;
+    height: 35px;
+    border: 1px solid darkgrey;
+    border-radius: 4px;
+
+}
+.hid_sel{
+    width: 100px;
+    display: none;
+}
+.join_img{
+    margin-top:40px;
+}
+.reg_right{
+padding:0px 20px ;
+    height: 240px;
+
+    background-color: #fff;
+    border-radius: 7px;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+}
+.reg_left{
+    float: left;
+}
+.signup{
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+    color: #f7fff9;
+    font-size: 24px;
+margin-top: 30px;
+float: right;
+    background-color:#21384e;
+}
