@@ -174,3 +174,9 @@ text-align: center;
     padding: 10px;
 
 }
+footer{
+    height: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color:darkslategray;
+}
