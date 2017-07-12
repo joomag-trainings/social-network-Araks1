@@ -180,3 +180,17 @@ footer{
     padding: 20px;
     background-color:darkslategray;
 }
+.center{
+    width: 1200px;
+    margin: auto;
+    margin-top: 80px;
+}
+.file{
+
+    height: 40px;
+    width:250px;
+}
+.sbm{
+    height: 40px;
+    width: 80px;
+}

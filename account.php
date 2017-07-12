@@ -14,7 +14,7 @@
                 </div>
                <div class="photo">
                    <i class="fa fa-camera-retro" aria-hidden="true"></i>
-                   <a href="photos.html">My photos</a>
+                   <a href="photos.php">My photos</a>
                </div>
            </div>
            <div class="post_all">
