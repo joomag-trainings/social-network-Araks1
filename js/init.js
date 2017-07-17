@@ -1,3 +1,4 @@
+/*
 
 function login() {
 
@@ -22,10 +23,11 @@ log.addEventListener('submit',function (e) {
     console.log(email);
     console.log(password);
     if(email !== "" && password !== "" ){
-
+                window.location.href = "account.php";
     }
     else{
             errors.textContent = "Fill all the fields";
     }
 
 })
+*/

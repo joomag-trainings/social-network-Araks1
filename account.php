@@ -1,4 +1,15 @@
-<?php include ("layouts/header.html"); ?>
+<?php
+session_start();
+include ("layouts/header.html");
+if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+}
+else{
+    header('location:index.php');
+}
+
+
+?>
 <div id="container">
            <div class="left">
                 <div class="account">
@@ -7,7 +18,7 @@
                     <img src="images/6-512.png" width="180px" height="180px">
 
                     <div class="info">
-                    <span><strong>Email:</strong>example@gmail.com</span>
+                    <span><strong>Email:</strong><?= $email; ?></span>
                         <span><strong>Gender:</strong>Male</span>
                     <span><strong>Country:</strong></span>my country</div>
                     <a href="edit.html" class="edit_a edit">Edit<i class="fa fa-pencil-square-o penc" aria-hidden="true"></i></a>
