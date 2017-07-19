@@ -1,3 +1,0 @@
-admin=>444
-araqs=>111
-user=>222
