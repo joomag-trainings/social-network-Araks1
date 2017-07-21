@@ -29,8 +29,4 @@ class UploadController
         }
         include "Class/view/PhotosView.php";
     }
-    public function save(){
-
-    }
-
 }

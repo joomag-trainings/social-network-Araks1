@@ -50,10 +50,6 @@ class AuthController
                     $userModel = new \AuthModel();
                     $userModel->insertUser($this->firstName, $this->lastName, $this->email, $hash,
                         $this->gender);
-
-                    /* $info = $this->email . '=>' . $hash . PHP_EOL;=
-                     $this->addToDatabase($info);
-                     $this->success = "You are successfully registered!";*/
                 }
             } else {
 
@@ -82,6 +78,7 @@ class AuthController
         }
         include('Class/view/LoginView.php');
     }
+
     public function actionLogOut()
     {
         if (isset($_POST['logout'])) {
