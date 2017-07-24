@@ -1,21 +1,19 @@
-<?php
-session_start();
-include("layouts/header.html");
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    header('location:index.php');
-}
-?>
+<?php include("layouts/header.html"); ?>
     <div id="container">
         <div class="left">
+            <form action="index.php?page=account&action=SearchFriends" method="post">
+                <input type="text" placeholder="search" name="name">
+                <input type="submit" value="Subit" name="search">
+            </form>
             <div class="account">
 
-                <h2>Name Lastname</h2>
+                <a href=""><i class="fa fa-users" aria-hidden="true"></i><span
+                            style="color: red"><?= $notification; ?> </span></a>
+                <h2>Name Lastname <?php var_dump($_SESSION['id']); ?></h2>
                 <img src="images/6-512.png" width="180px" height="180px">
 
                 <div class="info">
-                    <span><strong>Email:</strong><?= $email; ?></span>
+                    <span><strong>Email:</strong></span>
                     <span><strong>Gender:</strong>Male</span>
                     <span><strong>Country:</strong></span>my country
                 </div>

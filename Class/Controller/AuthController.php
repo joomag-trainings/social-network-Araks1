@@ -26,7 +26,6 @@ class AuthController
 
     public function actionSignIn()
     {
-
         if (isset($_POST['signup'])) {
             $this->firstName = self::sanitize($_POST['f_name']);
             $this->lastName = self::sanitize($_POST['l_name']);
@@ -46,10 +45,9 @@ class AuthController
                     $hash = password_hash($this->password, PASSWORD_BCRYPT);
                     $modelPath = 'Class/' . str_replace("Controller", "Model", __CLASS__) . '.php';
                     $modelPath = str_replace('\\', '/', $modelPath);
-                    include($modelPath);
+                    require($modelPath);
                     $userModel = new \AuthModel();
-                    $userModel->insertUser($this->firstName, $this->lastName, $this->email, $hash,
-                        $this->gender);
+                    $userModel->insertUser($this->firstName, $this->lastName, $this->email, $hash, $this->gender);
                 }
             } else {
 
@@ -69,11 +67,9 @@ class AuthController
             } else {
                 $modelPath = 'Class/' . str_replace("Controller", "Model", __CLASS__) . '.php';
                 $modelPath = str_replace('\\', '/', $modelPath);
-                include($modelPath);
-
+                require($modelPath);
                 $userModel = new \AuthModel();
                 $userModel->logIn($email, $password);
-
             }
         }
         include('Class/view/LoginView.php');
@@ -84,7 +80,7 @@ class AuthController
         if (isset($_POST['logout'])) {
             session_start();
             session_destroy();
-            header('location:index.php?page=validation&action=checkInputs');
+            header('location:index.php?page=auth&action=login');
         }
     }
 }

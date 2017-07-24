@@ -194,3 +194,10 @@ footer{
     height: 40px;
     width: 80px;
 }
+.friend{
+    height: 60px;
+    width: 200px;
+    font-size: 26px;
+    color:cornflowerblue;
+padding:0px 6px;
+}

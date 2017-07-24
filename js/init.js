@@ -31,3 +31,9 @@ log.addEventListener('submit',function (e) {
 
 })
 */
+var friend = document.getElementById('friend');
+friend.addEventListener('click',function () {
+    friend.innerText="send";
+friend.disabled='disabled';
+    window.location.href = "index.php?page=account&action=get&send="+get;
+})
