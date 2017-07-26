@@ -4,6 +4,12 @@ include('DatabaseModel.php');
 
 class AuthModel extends DatabaseModel
 {
+    private $allUsersCount = '';
+    private $currentPage = '';
+    private $pageNumbers = '';
+    private $offset = '';
+    private $usersPerPage = '';
+
     public function insertUser($firstName, $lastName, $email, $pwd, $gender)
     {
         $connection = new PDO($this->dsn, $this->username, $this->password);
@@ -27,16 +33,38 @@ class AuthModel extends DatabaseModel
         if (password_verify($pwd, $verify)) {
             session_start();
             $_SESSION['id'] = $row['id'];
-            header('location:index.php?page=account&action=viewaccount');
+            header("location:index.php?page=account&action=viewaccount&id=" . $_SESSION['id']
+            );
         }
     }
 
-    public function search($name)
+    public function search()
     {
         $connection = new PDO($this->dsn, $this->username, $this->password);
-        $statement = $connection->prepare("SELECT * FROM users WHERE first_name LIKE '%$name%' OR last_name LIKE '%$name%' ");
+        //$statement = $connection->prepare("SELECT * FROM users WHERE first_name LIKE '%$name%' OR last_name LIKE '%$name%' ");
+        $statement = $connection->prepare("SELECT * FROM users");
+        $statement->execute();
+        $row = $statement->fetchAll();
+        $this->allUsersCount = count($row);
+
+        $this->pageNumbers = ($this->allUsersCount) / 3;
+
+        if (is_float($this->pageNumbers)) {
+            $this->pageNumbers = round($this->pageNumbers);
+        }
+        $this->currentPage = $_GET['num'];
+        $this->offset = ($this->currentPage - 1) * 3;
+        return $this->pageNumbers;
+    }
+
+    public function pagination()
+    {
+        $this->search();
+        $connection = new PDO($this->dsn, $this->username, $this->password);
+        $statement = $connection->prepare("SELECT * FROM users LIMIT 3 OFFSET $this->offset");
         $statement->execute();
         return $statement;
+
     }
 
     public function notify($id, $who)
@@ -52,9 +80,7 @@ class AuthModel extends DatabaseModel
         $connection = new PDO($this->dsn, $this->username, $this->password);
         $statement = $connection->prepare("SELECT * FROM friends where user_id_2=$id AND allow=0");
         $statement->execute();
-        $row = $statement->fetchAll();
-        $count = count($row);
-        return $count;
+        return $statement;
     }
 
     public function update($id)
@@ -62,5 +88,11 @@ class AuthModel extends DatabaseModel
         $connection = new PDO($this->dsn, $this->username, $this->password);
         $statement = $connection->prepare("UPDATE friends SET allow=1 WHERE user_id_2=:id");
         $statement->execute(array(':user_id_2' => $id));
+    }
+    public function selectAllFriends($frinedsId){
+        $connection = new PDO($this->dsn, $this->username, $this->password);
+        $statement = $connection->prepare("SELECT * FROM users where id=$frinedsId");
+        $statement->execute();
+        return $statement;
     }
 }
